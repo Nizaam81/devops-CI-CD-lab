@@ -1,0 +1,21 @@
+name: CI Practice Run
+
+on:
+  push:
+    branches: [ main ] # Runs every time you push to the main branch
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest # Tells GitHub to give us a temporary clean Linux server
+
+    steps:
+    - name: Get my code
+      uses: actions/checkout@v4 # Copies your app.js into the Linux server
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4 # Installs Node.js on the Linux server
+      with:
+        node-version: '20'
+
+    - name: Run Quality Test Script
+      run: node app.js # Executes your code. If it exits with 0, the check passes!
