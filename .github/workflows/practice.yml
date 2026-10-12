@@ -18,4 +18,4 @@ jobs:
         node-version: '20'
 
     - name: Run Quality Test Script
-      run: node app.js # Executes your code. If it exits with 0, the check passes!
+      run: node index.js # Executes your code. If it exits with 0, the check passes!
